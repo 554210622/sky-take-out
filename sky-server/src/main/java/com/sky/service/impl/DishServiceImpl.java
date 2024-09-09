@@ -147,10 +147,11 @@ public class DishServiceImpl implements DishService {
      * @param categoryId
      * @return
      */
-    public List<Dish> list(Long categoryId) {
+    public List<Dish> list(Long categoryId,String name) {
         Dish dish = new Dish();
         dish.setCategoryId(categoryId);
         dish.setStatus(StatusConstant.ENABLE);
+        dish.setName(name);
         List<Dish> list = dishMapper.list(dish);
         return list;
     }
